@@ -19,12 +19,12 @@ composer require ham0mer/chlogin
 ~~~
 //登录方法
 $config = array()
-$login = \login\Login::getApp($config);
+$login = Login::getApp($config);
 $login->login();
 
 //登录回调
 $config = array()
-$login = \login\Login::getApp($config);
+$login = Login::getApp($config);
 $login->getUserInfo();
 ~~~
 
@@ -38,13 +38,13 @@ $config['framework'] = 'tp';//framework为空使用原生$_SESSION, tp使用thin
 $config = [
       'url' => 'https://login.fan/' . 'connect.php',
       // 聚合平台获取
-      'app_id' => '1054',
+      'app_id' => '10000',
       // 聚合平台获取
-      'app_key' => 'c8b2d11743906287f4090d96e14fbf50',
+      'app_key' => 'xxx',
       // 回调地址
       'callback' => '/api/index/qqcallback',
       'framework' => 'tp',
-      'type'      =>  'alipay'//此处为登录类型，支持QQ,Alipay,baidu,gitee,github,wx,sina,huawei,xiaomi,google,microsoft,facebook,twitter,dingtalk登录
+      'type'      =>  'qq'//此处为登录类型，支持QQ,Alipay,baidu,gitee,github,wx,sina,huawei,xiaomi,google,microsoft,facebook,twitter,dingtalk登录
   ];
 
 /**
