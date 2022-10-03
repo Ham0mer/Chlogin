@@ -1,6 +1,6 @@
 {
     "name": "ham0mer/chlogin",
-    "description": "彩虹聚合登录",
+    "description": "基于彩虹聚合登录开发，支持QQ,Alipay,baidu,gitee,github,wx,sina,huawei,xiaomi,google,microsoft,facebook,twitter,dingtalk登录",
     "type": "library",
     "require": {
         "php": ">=5.4.0"
