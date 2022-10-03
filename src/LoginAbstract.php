@@ -5,7 +5,7 @@
  * Licensed ( https://lsls.me )
  * Copyright (c) 2022~2099 https://lsls.me All rights reserved.
  */
-namespace Ham0mer\Chlogin;
+namespace ham0mer\chlogin;
 abstract class LoginAbstract
 {
     abstract function login();
