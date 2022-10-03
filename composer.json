@@ -3,7 +3,7 @@
     "description": "彩虹聚合登录",
     "type": "library",
     "require": {
-        "php": ">=7.0"
+        "php": ">=5.4.0"
     },
     "license": "Apache-2.0",
     "autoload": {
