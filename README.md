@@ -25,7 +25,7 @@ $login->login();
 //登录回调
 $config = array()
 $login = Login::getApp($config);
-$login->getUserInfo();
+$login->callback($state,$_GET['code']);
 ~~~
 
 ### 配置强调
