@@ -10,5 +10,5 @@ abstract class LoginAbstract
 {
     abstract function login();
 
-    abstract function callback();
+    abstract function callback($state,$code);
 }

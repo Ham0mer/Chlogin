@@ -17,8 +17,9 @@ class QQ extends LoginAbstract
         'app_key' => '5023acb1767d931a664e995b89e5de07',
         // 回调地址
         'callback' => '/index/user/qqcallback',
-        'framework' => 'tp'
-        );
+        'framework' => 'tp',
+        'type'      =>   'qq'
+    );
     // 全局唯一实例
     private static $_app = null;
 
@@ -59,7 +60,7 @@ class QQ extends LoginAbstract
             "act" => "login",
             "appid" => $appid,
             "appkey" => $this->_config['app_key'],
-            "type" => 'qq',
+            "type" => $this->_config['type'],
             "redirect_uri" => $this->_config['callback'],
             "state" => $state
         );
@@ -70,7 +71,7 @@ class QQ extends LoginAbstract
         exit();
     }
     //登录成功返回网站
-    public function callback(){
+    public function callback($state, $code){
         // --------验证state防止CSRF攻击
         if($this->_config['framework']=='tp'){
             $state = session('qquser.state');
@@ -78,7 +79,7 @@ class QQ extends LoginAbstract
             $state = $_SESSION['qquser.state'];
         }
 
-        if ($_GET['state'] != $state) {
+        if ($state != $state) {
             return $this->showError('0', "验证过期，请重新操作");
             exit();
         }
@@ -87,7 +88,7 @@ class QQ extends LoginAbstract
             "act" => "callback",
             "appid" => $this->_config['app_id'],
             "appkey" => $this->_config['app_key'],
-            "code" => $_GET['code']
+            "code" => $code
         );
 
         //------构造请求access_token的url
@@ -102,7 +103,7 @@ class QQ extends LoginAbstract
             "act" => "query",
             "appid" => $this->_config['app_id'],
             "appkey" => $this->_config['app_key'],
-            "type" => 'qq',
+            "type" => $this->_config['type'],
             "social_uid" => $social_uid
         );
 
