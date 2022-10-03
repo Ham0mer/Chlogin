@@ -1,0 +1,21 @@
+{
+    "name": "ham0mer/chlogin",
+    "description": "彩虹聚合登录",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "Ham0mer\\Chlogin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hammer",
+            "email": "oio_qwq@proton.me"
+        }
+    ],
+    "minimum-stability": "dev"
+}
