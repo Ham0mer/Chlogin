@@ -8,7 +8,7 @@
     "license": "Apache-2.0",
     "autoload": {
         "psr-4": {
-            "ham0mer\\chlogin\\": "src/"
+            "Ham0mer\\Chlogin\\": "src/"
         }
     },
     "authors": [
