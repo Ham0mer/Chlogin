@@ -25,7 +25,7 @@ $login->login();
 //登录回调
 $config = array()
 $login = Login::getApp($config);
-$login->callback($state,$_GET['code']);
+$login->callback($_GET['state'],$_GET['code']);
 ~~~
 
 ### 配置强调
@@ -66,7 +66,7 @@ function qqCallbackAction()
     $state = session('qquser.state');
     $login = Login::getApp($config);
     // 获取用户信息
-    $userinfo = $login->callback($state,$_GET['code']);
+    $userinfo = $login->callback($_GET['state'],$_GET['code']);
     return userinfo;
 }
 ~~~
