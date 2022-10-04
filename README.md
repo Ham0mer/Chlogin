@@ -63,7 +63,6 @@ function qqLoginAction()
  */
 function qqCallbackAction()
 {
-    $state = session('qquser.state');
     $login = Login::getApp($config);
     // 获取用户信息
     $userinfo = $login->callback($_GET['state'],$_GET['code']);
