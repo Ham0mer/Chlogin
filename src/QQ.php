@@ -74,12 +74,12 @@ class QQ extends LoginAbstract
     public function callback($state, $code){
         // --------验证state防止CSRF攻击
         if($this->_config['framework']=='tp'){
-            $state = session('qquser.state');
+            $state2 = session('qquser.state');
         }else{
-            $state = $_SESSION['qquser.state'];
+            $state2 = $_SESSION['qquser.state'];
         }
 
-        if ($state != $state) {
+        if ($state != $state2) {
             return $this->showError('0', "验证过期，请重新操作");
             exit();
         }
