@@ -3,7 +3,7 @@
 
 ### 安装
 
-~~~
+~~~bash
 composer require ham0mer/chlogin
 ~~~
 
@@ -16,7 +16,7 @@ composer require ham0mer/chlogin
 
 ### 使用方法
 
-~~~
+~~~php
 //登录方法
 $config = array()
 $login = Login::getApp($config);
@@ -29,12 +29,12 @@ $login->callback($state,$_GET['code']);
 ~~~
 
 ### 配置强调
-~~~
+~~~php
 $config['framework'] = 'tp';//framework为空使用原生$_SESSION, tp使用thinkphp的session助手函数
 ~~~
 
 ### 登录示例：
-~~~
+~~~php
 $config = [
       'url' => 'https://login.fan/' . 'connect.php',
       // 聚合平台获取
