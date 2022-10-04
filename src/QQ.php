@@ -68,7 +68,6 @@ class QQ extends LoginAbstract
         $login_date = json_decode($login_get,true);
         $login_url = $login_date['url'];
         header("Location:$login_url");
-        exit();
     }
     //登录成功返回网站
     public function callback($state, $code){
@@ -80,8 +79,7 @@ class QQ extends LoginAbstract
         }
 
         if ($state != $state2) {
-            return $this->showError('0', "验证过期，请重新操作");
-            exit();
+            return "验证过期，请重新操作";
         }
         //-------请求参数列表
         $keysArr = array(
@@ -179,7 +177,7 @@ class QQ extends LoginAbstract
 
         // -------请求为空
         if (empty($response)) {
-            return $this->showError("50001", "<h2>可能是服务器无法请求https协议</h2>可能未开启curl支持,请尝试开启curl支持，重启web服务器，如果问题仍未解决，请联系我们");
+            return 'error';
         }
 
         return $response;
@@ -226,22 +224,5 @@ class QQ extends LoginAbstract
 
         curl_close($ch);
         return $ret;
-    }
-
-    /**
-     * showError
-     * 显示错误信息
-     *
-     * @param int $code
-     *            错误代码
-     * @param string $description
-     *            描述信息（可选）
-     */
-    public function showError($code, $description = '$')
-    {
-        echo "<meta charset=\"UTF-8\">";
-        echo "<h3>error:</h3>$code";
-        echo "<h3>msg  :</h3>$description";
-        exit();
     }
 }
